@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +46,7 @@ INSTALLED_APPS = [
     'APP',
     'api',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -63,9 +64,32 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://192.168.1.8:8080", # Adjust this to your Vue.js application's origin
-    "http://192.168.1.6:8080" # Adjust this to your Vue.js application's origin
+    "http://192.168.1.6:8080", # Adjust this to your Vue.js application's origin
+    "http://localhost:8080",
+     "http://localhost:8080",  # Add your frontend URL
+    "http://127.0.0.1:8080",  # Add your frontend URL with IP
+    "http://localhost:8000",  # Add your Django development server URL
+    "http://127.0.0.1:8000", # Adjust this to your Vue.js application's origin
 ]
+
+CORS_ALLOWED_HEADERS = [
+    'access-control-allow-headers',
+    'access-allow-control-origin',
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'content-disposition',  # Add this line
+]
+
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_HEADERS = True
+
 
 ROOT_URLCONF = 'GPT.urls'
 
@@ -139,3 +163,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
