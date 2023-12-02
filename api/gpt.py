@@ -47,6 +47,6 @@ def ask_ai(query):
         response = query_engine.query(query)
         return response
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 openai.api_key = os.environ["OPENAI_API_KEY"]
 construct_index("context_data/data")
