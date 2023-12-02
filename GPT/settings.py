@@ -27,7 +27,16 @@ SECRET_KEY = 'django-insecure-ye-$ay&(&4jay1z))-eyneow2or)l_rw+_sd+l^s800yv%q=#i
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    '192.168.1.8',
+    'https://192.168.1.8'
+    '*',
+    '192.168.55.91',
+    'https://192.168.55.91',
+    'http://192.168.55.91',
+    'https://192.168.7.168',
+    '192.168.7.168',
+    '192.168.0.132'
 ]
 
 
@@ -47,6 +56,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'corsheaders',
+    # 'sslserver',
 ]
 
 MIDDLEWARE = [
@@ -70,10 +80,27 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",  # Add your frontend URL with IP
     "http://localhost:8000",  # Add your Django development server URL
     "http://127.0.0.1:8000", # Adjust this to your Vue.js application's origin
+    'capacitor://np.com.prithaklamsal.discoursegpt',
+    'http://192.168.1.5',
+    'http://192.168.1.1',
+    'http://*',
+    'https://*',
+    'capacitor://*',
+    'http://192.168.1.6:8000',
+    'http://192.168.1.5',
+    'https://192.168.1.8:8000',
+    'https://192.168.55.91:8080',
+    'https://localhost:8080',
+    'https://192.168.7.168:8080',
+    'https://192.168.0.132:8080'
+    # '*',
+
+
 ]
 
 CORS_ALLOWED_HEADERS = [
     'access-control-allow-headers',
+    'access-control-allow-origin'
     'access-allow-control-origin',
     'accept',
     'accept-encoding',
@@ -89,6 +116,10 @@ CORS_ALLOWED_HEADERS = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_HEADERS = True
+CORS_ALLOW_ALL_ORIGINS=True
+
+# SSLCERTIFICATE = 'certificate.pem'
+# SSLPRIVATEKEY = 'privatekey.pem'
 
 
 ROOT_URLCONF = 'GPT.urls'

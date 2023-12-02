@@ -3,7 +3,7 @@ import logging
 import openai
 logging.getLogger().setLevel(logging.ERROR)
 from llama_index import SimpleDirectoryReader, GPTVectorStoreIndex, LLMPredictor, PromptHelper, ServiceContext, load_index_from_storage,StorageContext
-from langchain.llms import OpenAI
+from langchain.llms.openai import OpenAI
 from langchain.base_language import BaseLanguageModel
 
 def construct_index(directory_path):
