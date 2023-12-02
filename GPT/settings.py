@@ -36,7 +36,8 @@ ALLOWED_HOSTS = [
     'http://192.168.55.91',
     'https://192.168.7.168',
     '192.168.7.168',
-    '192.168.0.132'
+    '192.168.0.132',
+    'https://discoursegpt.onrender.com'
 ]
 
 
